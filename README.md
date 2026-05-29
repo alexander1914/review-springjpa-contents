@@ -1,11 +1,7 @@
-# Read Me First
-The following was discovered as part of building this project:
-
-* The original package name 'com.github.alexander1914.spring-jpa-review' is invalid and this project uses 'com.github.alexander1914.spring_jpa_review' instead.
+# Review Spring JPA contents
+Describing the best practices with JPA:
 
 # Getting Started
-
-### Reference Documentation
 For further reference, please consider the following sections:
 
 * [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
@@ -19,10 +15,27 @@ The following guides illustrate how to use some features concretely:
 * [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
 * [Accessing data with MySQL](https://spring.io/guides/gs/accessing-data-mysql/)
 
-### Maven Parent overrides
+### JPA Persistence API Annotations
 
-Due to Maven's design, elements are inherited from the parent POM to the project POM.
-While most of the inheritance is fine, it also inherits unwanted elements like `<license>` and `<developers>` from the parent.
-To prevent this, the project POM contains empty overrides for these elements.
-If you manually switch to a different parent and actually want the inheritance, you need to remove those overrides.
+*@Table*: is annotation in JPA is used to define the database table mapping for an entity.
+
+*@Entity*: is annotation of the Java class can indicate that it is the entity, 
+and it can represent the tables in the relational database.
+
+*@Id*: is annotation used to define the primary key of a JPA entity, uniquely identifying each record in the database.
+
+*@GeneratedValue*: is annotation to work automatically generate IDs
+
+*@GeneratedValue*: is annotation provides us with different strategies for the generation of primary keys
+
+*@UniqueConstraint*: is annotation that enforces unique constraints on one or more columns.
+
+*@Column*: is annotation that specified, JPA automatically maps the field name to a column with the same name.
+
+*@CreationTimestamp*: is annotation a convenient annotation that sets the field value to the current timestamp 
+when the entity is first saved.
+
+*@UpdateTimestamp*: is annotation another annotation provided by Hibernate. 
+It automatically sets the field value to the current timestamp on each entity update.
+
 
