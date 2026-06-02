@@ -38,4 +38,8 @@ when the entity is first saved.
 *@UpdateTimestamp*: is annotation another annotation provided by Hibernate. 
 It automatically sets the field value to the current timestamp on each entity update.
 
+*@Repository*: is annotation used to indicate that the class is a Data Access Object(DAO) or repository
+The main purpose of the **@Repository** annotation is to interact with a database. 
+It encapsulates the logic required to access and manipulate data
+
 
