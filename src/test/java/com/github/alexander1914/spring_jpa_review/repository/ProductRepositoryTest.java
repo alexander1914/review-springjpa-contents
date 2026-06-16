@@ -99,4 +99,13 @@ class ProductRepositoryTest {
         System.out.println(products.size());
     }
 
+    @Test
+    void deleteByIdMethod(){
+        Long id = 1L;
+
+        productRepository.deleteById(id);
+
+        System.out.println("Product deleted with success");
+    }
+
 }
