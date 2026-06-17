@@ -6,10 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class ProductRepositoryTest {
@@ -100,12 +97,36 @@ class ProductRepositoryTest {
     }
 
     @Test
-    void deleteByIdMethod(){
+    void deleteByIdMethod() {
         Long id = 1L;
 
         productRepository.deleteById(id);
 
         System.out.println("Product deleted with success");
+    }
+
+    @Test
+    void deleteMethod() {
+        //find an entity by id
+        Long id = 1L;
+        Product product = productRepository.findById(id).get();
+
+        //delete entity now
+        productRepository.delete(product);
+
+        System.out.println("Product deleted with success");
+    }
+
+    @Test
+    void deleteAllMethod() {
+        productRepository.deleteAll();
+
+        Product product1 = productRepository.findById(10L).get();
+        Product product2 = productRepository.findById(11L).get();
+
+        productRepository.deleteAll(List.of(product1, product2));
+
+        System.out.println("All product deleted with success");
     }
 
 }
