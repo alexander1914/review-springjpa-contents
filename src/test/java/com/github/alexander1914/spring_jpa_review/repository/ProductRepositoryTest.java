@@ -129,4 +129,20 @@ class ProductRepositoryTest {
         System.out.println("All product deleted with success");
     }
 
+    @Test
+    void countMethod() {
+        long result = productRepository.count();
+
+        System.out.println("How many product exists on database: " + result);
+    }
+
+    @Test
+    void existByIdMethod() {
+        Long id = 11L;
+
+        boolean result = productRepository.existsById(id);
+
+        System.out.println(result);
+    }
+
 }
