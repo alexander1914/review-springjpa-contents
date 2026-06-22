@@ -142,7 +142,7 @@ class ProductRepositoryTest {
 
         boolean result = productRepository.existsById(id);
 
-        System.out.println(result);
+        System.out.println("There is a ID on database: " + result);
     }
 
 }
