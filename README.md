@@ -40,6 +40,21 @@ It automatically sets the field value to the current timestamp on each entity up
 
 *@Repository*: is annotation used to indicate that the class is a Data Access Object(DAO) or repository
 The main purpose of the **@Repository** annotation is to interact with a database. 
-It encapsulates the logic required to access and manipulate data
+It encapsulates the logic required to access and manipulate data.
+
+### Query Lookup Strategies
+The JPA module supports defining a query manually as a String or having it being derived from the method name.
+Derived queries with the predicates **IsStartingWith**, **StartingWith**, **StartsWith**, **IsEndingWith**, 
+**EndingWith**, **EndsWith**, **IsNotContaining**, **NotContaining**, **NotContains**, **IsContaining**, **Containing**, 
+Contains the respective arguments for these queries will get sanitized. 
+This means if the arguments actually contain characters recognized by LIKE as wildcards these will get escaped so 
+they match only as literals. 
+The escape character used can be configured by setting the escapeCharacter of the **@EnableJpaRepositories** annotation. 
+
+    public interface UserRepository extends Repository<User, Long> {
+
+    List<User> findByEmailAddressAndLastname(String emailAddress, String lastname);
+
+    }
 
 
